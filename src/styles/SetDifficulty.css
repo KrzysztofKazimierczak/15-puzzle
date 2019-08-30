@@ -1,0 +1,42 @@
+main h2 {
+  text-transform: uppercase;
+  flex-basis: 15%;
+}
+
+main .settings {
+  display: flex;
+  flex-basis: 70%;
+  /* flex-grow: 1; */
+  width: 75vw;
+  justify-content: space-around;
+}
+
+main .settings div {
+  position: relative;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 5%;
+  background-color: #A8DADC;
+  color: black;
+  cursor: pointer;
+}
+
+main .settings div p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 2
+}
+
+main .settings div span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  color: #C9EBED;
+}
