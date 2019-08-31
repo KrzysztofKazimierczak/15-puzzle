@@ -1,0 +1,14 @@
+.TileZero,
+.Tile {
+  width: 20vw;
+  height: 20vw;
+}
+
+.TileZero {
+  background-color: black
+}
+
+.Tile {
+
+  background-color: red
+}
