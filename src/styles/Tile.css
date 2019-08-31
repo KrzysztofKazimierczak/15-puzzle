@@ -1,5 +1,14 @@
+.board {
+  display: flex;
+  width: 90vw;
+  height: 100%;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
 .TileZero,
 .Tile {
+  flex-basis: 33.33%;
   width: 20vw;
   height: 20vw;
 }
