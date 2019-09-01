@@ -3,6 +3,7 @@ import TileClass from "./TileClass";
 import Tile from "./Tile";
 
 class Board extends Component {
+  tile_size = `${100 / this.props.size}%`
 
   componentWillMount() {
     this.prepareBoard()
@@ -35,7 +36,8 @@ class Board extends Component {
           <Tile
             key={index}
             value={this.state.board[index].value}
-            move={this.handleClick}>
+            move={this.handleClick}
+            size={this.tile_size}>
           </Tile>
         )
       })
