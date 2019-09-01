@@ -55,7 +55,7 @@ class Board extends Component {
       }
     })
 
-    if (this.checkIsMovePossible) {
+    if (this.checkIsMovePossible(currentTile.coordinates, targetTile.coordinates)) {
       [currentTile.value, targetTile.value] = [targetTile.value, currentTile.value]
     }
     this.setState({
@@ -63,8 +63,13 @@ class Board extends Component {
     })
   }
 
-  checkIsMovePossible = () => {
-    return true
+  checkIsMovePossible = (current, target) => {
+
+    console.log(Math.abs((current[0] - current[1]) + (target[0] - target[1])));
+
+    console.log(current);
+    console.log(target);
+    if (Math.abs((current[0] - target[0]) + (current[1] - target[1])) === 1) return true
   }
 
 
