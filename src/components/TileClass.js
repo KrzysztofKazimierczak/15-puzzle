@@ -1,6 +1,7 @@
 class TileClass {
-  constructor(value) {
-    this.value = value
+  constructor(value, coordinates) {
+    this.value = value;
+    this.coordinates = []
   }
 }
 export default TileClass

@@ -10,7 +10,7 @@ const Tile = (props) => {
   } else {
     return (
       <div className="Tile">
-
+        {props.value}
       </div>
     )
   }

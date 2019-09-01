@@ -8,21 +8,33 @@ class Board extends Component {
     this.prepareBoard()
   }
   prepareBoard() {
-    const board = [];
-    for (let i = 0; i < this.props.size; i++) {
-      board.push(new TileClass(i))
+    let board = [];
+    let id = 0;
+    if (id !== this.props.size ** 2) {
+      for (let y = 0; y < this.props.size; y++) {
+        for (let x = 0; x < this.props.size; x++) {
+          board.push(new TileClass(id, [x, y]));
+          id++;
+        }
+      }
     }
-    this.setState({ board })
+
+    board = this.shuffleBoard(board);
+    this.setState({ board });
+  }
+
+  shuffleBoard = (board) => {
+    return board.sort(() => {
+      return .5 - Math.random();
+    });
   }
   createTiles(board) {
-    console.log('dupa');
     return (
       board.map((tile, index) => {
         return (
           <Tile
             key={index}
             value={this.state.board[index].value}>
-
           </Tile>
         )
       })
