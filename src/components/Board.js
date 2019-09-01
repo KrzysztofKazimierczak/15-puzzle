@@ -9,14 +9,8 @@ class Board extends Component {
   }
   prepareBoard() {
     let board = [];
-    let id = 0;
-    if (id !== this.props.size ** 2) {
-      for (let y = 0; y < this.props.size; y++) {
-        for (let x = 0; x < this.props.size; x++) {
-          board.push(new TileClass(id, [x, y]));
-          id++;
-        }
-      }
+    for (let i = 0; i < this.props.size ** 2; i++) {
+      board.push(new TileClass(i));
     }
 
     board = this.shuffleBoard(board);
@@ -24,9 +18,15 @@ class Board extends Component {
   }
 
   shuffleBoard = (board) => {
-    return board.sort(() => {
-      return .5 - Math.random();
-    });
+    board.sort(() => .5 - Math.random());
+    let index = 0
+    for (let y = 0; y < this.props.size; y++) {
+      for (let x = 0; x < this.props.size; x++) {
+        board[index].coordinates = [x, y]
+        index++
+      }
+    }
+    return board;
   }
   createTiles(board) {
     return (

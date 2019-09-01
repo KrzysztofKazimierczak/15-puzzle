@@ -1,5 +1,5 @@
 class TileClass {
-  constructor(value, coordinates) {
+  constructor(value) {
     this.value = value;
     this.coordinates = []
   }
