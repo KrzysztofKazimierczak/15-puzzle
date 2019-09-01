@@ -34,12 +34,37 @@ class Board extends Component {
         return (
           <Tile
             key={index}
-            value={this.state.board[index].value}>
+            value={this.state.board[index].value}
+            move={this.handleClick}>
           </Tile>
         )
       })
 
     )
+  }
+
+  handleClick = (e) => {
+    const newBoard = [...this.state.board];
+    let currentTile;
+    let targetTile;
+    newBoard.forEach(tile => {
+      if (tile.value === 0) {
+        currentTile = tile;
+      } else if (tile.value === parseInt(e.target.textContent)) {
+        targetTile = tile;
+      }
+    })
+
+    if (this.checkIsMovePossible) {
+      [currentTile.value, targetTile.value] = [targetTile.value, currentTile.value]
+    }
+    this.setState({
+      board: newBoard
+    })
+  }
+
+  checkIsMovePossible = () => {
+    return true
   }
 
 

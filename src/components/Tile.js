@@ -9,7 +9,7 @@ const Tile = (props) => {
     )
   } else {
     return (
-      <div className="Tile">
+      <div className="Tile" onClick={props.move}>
         {props.value}
       </div>
     )
