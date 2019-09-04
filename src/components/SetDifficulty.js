@@ -4,8 +4,9 @@ import '../styles/SetDifficulty.css'
 
 class SetDifficulty extends Component {
 
-  handleClick = (boardsize) => {
-    this.props.setBoardSize(boardsize)
+  handleClick = value => {
+    this.props.changeParentState("boardSize", value)
+    this.props.changeParentState("gameStarted", true)
   }
   render() {
 

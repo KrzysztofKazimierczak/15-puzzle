@@ -13,23 +13,21 @@ class App extends Component {
     faq: false,
     won: false,
     boardSize: null,
-
+    steps: null,
   }
 
-  setBoardSize = (boardSize) => {
-    this.setState({
-      boardSize,
-      gameStarted: true
-    })
-
+  changeState = (propStateName, arg) => {
+    this.setState(prevState => ({
+      [propStateName]: arg
+    }))
   }
 
   render() {
-    let mainContainer = null;
+    let mainContainer;
     if (this.state.won) {
-      mainContainer = <Won />
+      mainContainer = <Won changeParentState={this.changeState} steps={this.state.steps} />
     } else {
-      this.state.gameStarted ? mainContainer = <Board size={this.state.boardSize} /> : mainContainer = <SetDificulty setBoardSize={this.setBoardSize} />;
+      this.state.gameStarted ? mainContainer = <Board changeParentState={this.changeState} size={this.state.boardSize} steps={this.state.steps} /> : mainContainer = <SetDificulty changeParentState={this.changeState} />;
     }
     return (
       <div className="App">

@@ -12,6 +12,7 @@ class Board extends Component {
 
   componentWillMount() {
     this.prepareBoard()
+
   }
   prepareBoard() {
     let board = [];
@@ -62,18 +63,15 @@ class Board extends Component {
     })
 
     if (this.checkIsMovePossible(currentTile.coordinates, targetTile.coordinates)) {
-      [currentTile.value, targetTile.value] = [targetTile.value, currentTile.value]
+      [currentTile.value, targetTile.value] = [targetTile.value, currentTile.value];
+      this.setState({
+        board: newBoard,
+      })
+      this.props.changeParentState("steps", this.props.steps + 1)
     }
-    this.setState({
-      board: newBoard
-    })
     if (this.checkResult(this.state.board)) {
-      // this.setState({
-      //   won: true
-      // })
-      console.log('winner');
+      this.props.changeParentState("won", true)
     }
-
   }
 
   checkIsMovePossible = (current, target) => {
@@ -84,11 +82,12 @@ class Board extends Component {
     for (let tile of tiles) {
       if (tile.value === this.props.size * tile.coordinates[1] + tile.coordinates[0] + 1) {
         counter++;
-        console.log(`${tile} classname change `);
       }
     }
-    this.setState({ won: true })
     return counter === this.props.size ** 2 - 1;
+  }
+  cheat = () => {
+    this.props.changeParentState("won", true)
   }
 
 
@@ -96,10 +95,12 @@ class Board extends Component {
 
     const currentBoard = this.createTiles(this.state.board);
     return (
-      <div className="board">
-        {currentBoard}
-      </div>
-
+      <>
+        <div className="board">
+          {currentBoard}
+        </div>
+        <div className="cheats" onClick={this.cheat}></div>
+      </>
     );
   }
 }
