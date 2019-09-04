@@ -3,6 +3,11 @@ import TileClass from "./TileClass";
 import Tile from "./Tile";
 
 class Board extends Component {
+
+  state = {
+    board: [],
+  }
+
   tile_size = `${100 / this.props.size}%`
 
   componentWillMount() {
@@ -10,10 +15,10 @@ class Board extends Component {
   }
   prepareBoard() {
     let board = [];
+
     for (let i = 0; i < this.props.size ** 2; i++) {
       board.push(new TileClass(i));
     }
-
     board = this.shuffleBoard(board);
     this.setState({ board });
   }
@@ -23,7 +28,7 @@ class Board extends Component {
     let index = 0
     for (let y = 0; y < this.props.size; y++) {
       for (let x = 0; x < this.props.size; x++) {
-        board[index].coordinates = [x, y]
+        board[index].coordinates = [x, y];
         index++
       }
     }
@@ -41,7 +46,6 @@ class Board extends Component {
           </Tile>
         )
       })
-
     )
   }
 
@@ -63,17 +67,29 @@ class Board extends Component {
     this.setState({
       board: newBoard
     })
+    if (this.checkResult(this.state.board)) {
+      // this.setState({
+      //   won: true
+      // })
+      console.log('winner');
+    }
+
   }
 
   checkIsMovePossible = (current, target) => {
-
-    console.log(Math.abs((current[0] - current[1]) + (target[0] - target[1])));
-
-    console.log(current);
-    console.log(target);
     if (Math.abs((current[0] - target[0]) + (current[1] - target[1])) === 1) return true
   }
-
+  checkResult = (tiles) => {
+    let counter = 0;
+    for (let tile of tiles) {
+      if (tile.value === this.props.size * tile.coordinates[1] + tile.coordinates[0] + 1) {
+        counter++;
+        console.log(`${tile} classname change `);
+      }
+    }
+    this.setState({ won: true })
+    return counter === this.props.size ** 2 - 1;
+  }
 
 
   render() {
