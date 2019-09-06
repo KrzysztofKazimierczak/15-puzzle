@@ -7,14 +7,6 @@
   align-content: flex-start;
 }
 
-.faqMark {
-
-  width: 8vh;
-  height: 8vh;
-  border-radius: 100%;
-  background-color: green;
-  font-size: 100%;
-}
 
 .fa-question-circle {
   position: absolute;
@@ -28,22 +20,4 @@
 
 .fa-question-circle:hover {
   color: yellow;
-
-}
-
-.faqWrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0;
-  height: 0;
-  background-color: green;
-  overflow: hidden;
-  transition: 0.2s
-}
-
-.faqOn {
-  width: 50vw;
-  height: 50vh;
 }

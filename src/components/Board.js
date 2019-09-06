@@ -2,14 +2,9 @@ import React, { Component } from 'react';
 import TileClass from "./TileClass";
 import Tile from "./Tile";
 import '../styles/Board.css';
-import Faq from "./Faq.js";
 
 class Board extends Component {
 
-  state = {
-    board: [],
-    faqActive: false,
-  }
 
   tile_size = `${100 / this.props.size}%`
 
@@ -24,7 +19,7 @@ class Board extends Component {
       board.push(new TileClass(i));
     }
     board = this.shuffleBoard(board);
-    this.setState({ board });
+    this.props.changeParentState("board", board)
   }
 
   shuffleBoard = (board) => {
@@ -44,7 +39,7 @@ class Board extends Component {
         return (
           <Tile
             key={index}
-            value={this.state.board[index].value}
+            value={this.props.board[index].value}
             move={this.handleClick}
             size={this.tile_size}>
           </Tile>
@@ -54,7 +49,7 @@ class Board extends Component {
   }
 
   handleClick = (e) => {
-    const newBoard = [...this.state.board];
+    const newBoard = [...this.props.board];
     let currentTile;
     let targetTile;
     newBoard.forEach(tile => {
@@ -67,12 +62,10 @@ class Board extends Component {
 
     if (this.checkIsMovePossible(currentTile.coordinates, targetTile.coordinates)) {
       [currentTile.value, targetTile.value] = [targetTile.value, currentTile.value];
-      this.setState({
-        board: newBoard,
-      })
-      this.props.changeParentState("steps", this.props.steps + 1)
+      this.props.changeParentState("board", newBoard);
+      this.props.changeParentState("steps", this.props.steps + 1);
     }
-    if (this.checkResult(this.state.board)) {
+    if (this.checkResult(this.props.board)) {
       this.props.changeParentState("won", true)
     }
   }
@@ -89,41 +82,18 @@ class Board extends Component {
     }
     return counter === this.props.size ** 2 - 1;
   }
-  cheat = () => {
-    const cheatedBoard = [...this.state.board];
-    for (let i = 0; i < cheatedBoard.length - 2; i++) {
-      cheatedBoard[i].value = i + 1
-    }
-    //penultimate tile is empty
-    cheatedBoard[cheatedBoard.length - 2].value = 0;
-    //last tile has highest value
-    cheatedBoard[cheatedBoard.length - 1].value = cheatedBoard.length - 1;
-
-    this.setState({
-      board: cheatedBoard
-    })
-    this.props.changeParentState("cheater", true)
-  }
-
 
   render() {
 
-    const currentBoard = this.createTiles(this.state.board);
-    const classes = ["faqWrapper"];
-    if (this.state.faqActive) classes.push('faqOn');
-    if (!this.state.faqActive && classes.length === 2) classes.splice(0, 1)
+    const currentBoard = this.createTiles(this.props.board);
+
 
     return (
       <>
         <div className="board">
           {currentBoard}
-          <i className="far fa-question-circle" onClick={() => { this.setState({ faqActive: true }) }}></i>
-
+          <i className="far fa-question-circle" onClick={() => { this.props.changeParentState("faqActive", true) }}></i>
         </div>
-        <div className={classes.join(" ")}>
-          <Faq />
-        </div>
-        <div className="cheats" onClick={this.cheat}></div>
       </>
     );
   }

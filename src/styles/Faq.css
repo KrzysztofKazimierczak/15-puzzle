@@ -1,0 +1,46 @@
+.fa-times-circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.faqContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 5%;
+  background-color: green;
+  transition: 0.2s;
+  z-index: -1;
+}
+
+.faqContainer * {
+  display: none;
+}
+
+.faqOn {
+  width: 50vw;
+  height: 50vh;
+  filter: blur(0px);
+  z-index: 3;
+}
+
+.faqOn * {
+  display: block
+}
+
+.blurActive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 2;
+}
