@@ -10,7 +10,6 @@ import Won from './components/Won.js'
 class App extends Component {
   state = {
     gameStarted: false,
-    faq: false,
     won: false,
     boardSize: null,
     steps: null,
@@ -29,7 +28,7 @@ class App extends Component {
     if (this.state.won) {
       mainContainer = <Won changeParentState={this.changeState} steps={this.state.steps} cheater={this.state.cheater} boardSize={this.state.boardSize} />
     } else {
-      this.state.gameStarted ? mainContainer = <Board changeParentState={this.changeState} size={this.state.boardSize} steps={this.state.steps} faq={this.state.faq} /> : mainContainer = <SetDificulty changeParentState={this.changeState} />;
+      this.state.gameStarted ? mainContainer = <Board changeParentState={this.changeState} size={this.state.boardSize} steps={this.state.steps} /> : mainContainer = <SetDificulty changeParentState={this.changeState} />;
     }
     return (
       <div className="App">

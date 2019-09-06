@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import TileClass from "./TileClass";
 import Tile from "./Tile";
+import '../styles/Board.css';
+import Faq from "./Faq.js";
 
 class Board extends Component {
 
   state = {
     board: [],
+    faqActive: false,
   }
 
   tile_size = `${100 / this.props.size}%`
@@ -106,10 +109,19 @@ class Board extends Component {
   render() {
 
     const currentBoard = this.createTiles(this.state.board);
+    const classes = ["faqWrapper"];
+    if (this.state.faqActive) classes.push('faqOn');
+    if (!this.state.faqActive && classes.length === 2) classes.splice(0, 1)
+
     return (
       <>
         <div className="board">
           {currentBoard}
+          <i className="far fa-question-circle" onClick={() => { this.setState({ faqActive: true }) }}></i>
+
+        </div>
+        <div className={classes.join(" ")}>
+          <Faq />
         </div>
         <div className="cheats" onClick={this.cheat}></div>
       </>
