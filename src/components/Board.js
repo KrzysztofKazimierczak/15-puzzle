@@ -87,7 +87,19 @@ class Board extends Component {
     return counter === this.props.size ** 2 - 1;
   }
   cheat = () => {
-    this.props.changeParentState("won", true)
+    const cheatedBoard = [...this.state.board];
+    for (let i = 0; i < cheatedBoard.length - 2; i++) {
+      cheatedBoard[i].value = i + 1
+    }
+    //penultimate tile is empty
+    cheatedBoard[cheatedBoard.length - 2].value = 0;
+    //last tile has highest value
+    cheatedBoard[cheatedBoard.length - 1].value = cheatedBoard.length - 1;
+
+    this.setState({
+      board: cheatedBoard
+    })
+    this.props.changeParentState("cheater", true)
   }
 
 

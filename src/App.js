@@ -14,6 +14,7 @@ class App extends Component {
     won: false,
     boardSize: null,
     steps: null,
+    cheater: false,
   }
 
   changeState = (propStateName, arg) => {
@@ -23,11 +24,12 @@ class App extends Component {
   }
 
   render() {
+
     let mainContainer;
     if (this.state.won) {
-      mainContainer = <Won changeParentState={this.changeState} steps={this.state.steps} />
+      mainContainer = <Won changeParentState={this.changeState} steps={this.state.steps} cheater={this.state.cheater} boardSize={this.state.boardSize} />
     } else {
-      this.state.gameStarted ? mainContainer = <Board changeParentState={this.changeState} size={this.state.boardSize} steps={this.state.steps} /> : mainContainer = <SetDificulty changeParentState={this.changeState} />;
+      this.state.gameStarted ? mainContainer = <Board changeParentState={this.changeState} size={this.state.boardSize} steps={this.state.steps} faq={this.state.faq} /> : mainContainer = <SetDificulty changeParentState={this.changeState} />;
     }
     return (
       <div className="App">
