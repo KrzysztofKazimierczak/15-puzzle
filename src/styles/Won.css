@@ -1,0 +1,60 @@
+.won,
+.congrat,
+.again {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.won {
+  flex-basis: 70%;
+  justify-content: space-around;
+}
+
+.congrat {
+  justify-content: center;
+  flex-basis: 50%
+}
+
+.congrat h2 {
+  font-size: 48px;
+  letter-spacing: 3px;
+  font-family: 'Merienda One', cursive;
+  margin-bottom: 15px;
+}
+
+.congrat p {
+  font-size: 26px;
+}
+
+.congrat p span {
+  color: #f5cb5c;
+
+}
+
+.again {
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+
+.again p {
+  font-size: 20px;
+}
+
+.again button {
+  padding: 20px 30px;
+  margin-top: 15px;
+  font-size: 18px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: #e8eddf;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.again button:hover {
+  background-color: #f5cb5c
+}
