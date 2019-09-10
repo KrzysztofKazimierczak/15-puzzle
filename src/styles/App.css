@@ -21,10 +21,11 @@ main {
 }
 
 footer {
+  /* padding-bottom: 10px; */
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 5px;
-  background-color: #457B9D;
+  background-color: rgba(0, 0, 0, .7);
 }
 
 
