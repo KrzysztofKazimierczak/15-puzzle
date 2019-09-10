@@ -5,3 +5,7 @@ footer p img {
 footer p a {
   color: white;
 }
+
+footer p a:hover {
+  color: #f5cb5c
+}
