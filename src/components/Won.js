@@ -6,6 +6,7 @@ class Won extends Component {
     this.props.changeParentState("gameStarted", false)
     this.props.changeParentState("boardSize", null)
     this.props.changeParentState("cheater", false)
+    this.props.changeParentState("steps", 0)
   }
   render() {
     return (
