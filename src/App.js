@@ -10,9 +10,9 @@ import Faq from "./components/Faq.js";
 class App extends Component {
   state = {
     gameStarted: false,
-    won: true,
+    won: false,
     boardSize: null,
-    steps: 3,
+    steps: 0,
     cheater: false,
     faqActive: false,
     board: []
