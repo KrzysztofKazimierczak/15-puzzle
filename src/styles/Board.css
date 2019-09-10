@@ -12,12 +12,12 @@
   position: absolute;
   top: 0;
   right: 0;
-  transform: translate(50%, -50%);
+  transform: translate(75%, -75%);
   font-size: 50px;
   cursor: pointer;
   transition: .2s
 }
 
 .fa-question-circle:hover {
-  color: yellow;
+  color: #f5cb5c;
 }
