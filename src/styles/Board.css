@@ -1,8 +1,8 @@
 .board {
   display: flex;
   position: relative;
-  width: 60vh;
-  height: 60vh;
+  width: 30vw;
+  height: 30vw;
   flex-wrap: wrap;
   align-content: flex-start;
 }
@@ -13,11 +13,19 @@
   top: 0;
   right: 0;
   transform: translate(75%, -75%);
-  font-size: 5rem;
+  font-size: 5em;
   cursor: pointer;
   transition: .2s
 }
 
 .fa-question-circle:hover {
   color: #f5cb5c;
+}
+
+
+@media(orientation:portrait) {
+  .board {
+    width: 45vh;
+    height: 45vh;
+  }
 }

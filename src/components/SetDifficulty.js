@@ -11,7 +11,7 @@ class SetDifficulty extends Component {
   render() {
 
     return (
-      <>
+      <div className="homescreen">
         <h2>Select difficulty:</h2>
         <section className="settings">
           <div onClick={() => { this.handleClick(3) }} >
@@ -28,8 +28,7 @@ class SetDifficulty extends Component {
           </div>
         </section>
         <h3>The difficulty relates to the number of tiles that you need to arrange on the board</h3>
-
-      </>
+      </div>
     );
   }
 }

@@ -21,13 +21,15 @@ class Faq extends Component {
     return (<>
       <div className="faqContainer">
         <i className="far fa-times-circle" onClick={() => { this.props.changeParentState("faqActive", false) }}></i>
-        <div className="tips"><p>To win the game you need to change the order of the blocks to arrange numbers from 1 to {boardSize}. The last tile should be empty.</p>
-          <p>You can change order by clicking the adjacent empty tile.</p></div>
-        <div className="cheats"><h2>Need help?</h2>
-          <button onClick={this.handleCheatButton}>Click here to cheat</button></div>
-
-
-
+        <div className="tips">
+          <p>To win the game you need to change the order of the blocks to arrange numbers from 1 to {boardSize}.</p>
+          <p>The last tile should be empty.</p>
+          <p>You can change order by clicking the adjacent empty tile.</p>
+        </div>
+        <div className="cheats">
+          <h2>Need help?</h2>
+          <button onClick={this.handleCheatButton}>Click here to cheat</button>
+        </div>
       </div>
       <div className="blurActive"></div>
     </>);

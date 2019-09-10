@@ -1,5 +1,13 @@
-main h2 {
-  font-size: 3rem;
+.homescreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+.homescreen h2 {
+  font-size: 3em;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -15,6 +23,8 @@ main h2 {
   position: relative;
   width: 15vw;
   height: 15vw;
+  min-width: 76px;
+  min-height: 76px;
   border: 1px solid black;
   border-radius: 20%;
   background-color: #e8eddf;
@@ -28,7 +38,7 @@ main h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3.2rem;
+  font-size: 3.6em;
   text-transform: uppercase;
   letter-spacing: 3px;
   z-index: 2;
@@ -41,7 +51,7 @@ main h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Merienda One', cursive;
-  font-size: 7rem;
+  font-size: 7em;
   opacity: 0;
   transition: .3s;
 }
@@ -58,13 +68,56 @@ main h2 {
   opacity: 1
 }
 
-main h3 {
+.homescreen h3 {
   padding: 10px;
   width: 65%;
-  font-size: 1.8rem;
+  font-size: 1.8em;
   text-align: center;
   text-transform: uppercase;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, .6);
   color: #f5cb5c;
+}
+
+@media(max-width: 1126px) {
+  .homescreen {
+    font-size: 8px;
+  }
+
+}
+
+@media(max-width: 905px) {
+  .homescreen {
+    font-size: 7px;
+  }
+
+  .settings div {
+    width: 20vw;
+    height: 20vw;
+  }
+}
+
+@media(max-width: 800px) {
+  .settings {
+    font-size: 5px;
+  }
+}
+
+@media(max-width: 590px) {
+  .settings div {
+    width: 20vw;
+    height: 20vw;
+  }
+}
+
+@media(max-width: 430px) {
+  .settings {
+    font-size: 4px;
+  }
+
+  .settings div {
+    width: 22vw;
+    height: 22vw;
+
+  }
 }
