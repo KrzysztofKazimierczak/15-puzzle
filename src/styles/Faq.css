@@ -3,7 +3,7 @@
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
-  font-size: 50px;
+  font-size: 5rem;
   color: #e8eddf;
   cursor: pointer;
   transition: .3s;
@@ -40,6 +40,7 @@
 }
 
 .tips p {
+  font-size: 1.6rem;
   letter-spacing: 1px;
 }
 
@@ -52,6 +53,7 @@
 
 .cheats h2 {
   font-family: 'Merienda One', cursive;
+  font-size: 2.4rem;
 }
 
 .cheats button {
@@ -59,7 +61,7 @@
   background-color: #e8eddf;
   border: 1px solid black;
   border-radius: 15px;
-  font-size: 18px;
+  font-size: 1.8rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;

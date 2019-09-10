@@ -1,3 +1,8 @@
+footer {
+  padding: 5px;
+  font-size: 1.6rem
+}
+
 footer p img {
   vertical-align: middle;
 }

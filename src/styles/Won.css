@@ -18,7 +18,7 @@
 }
 
 .congrat h2 {
-  font-size: 48px;
+  font-size: 4.8rem;
   letter-spacing: 3px;
   font-family: 'Merienda One', cursive;
   margin-bottom: 15px;
@@ -39,13 +39,13 @@
 }
 
 .again p {
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .again button {
   padding: 20px 30px;
   margin-top: 15px;
-  font-size: 18px;
+  font-size: 1.8rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   border: 1px solid black;

@@ -1,4 +1,5 @@
 main h2 {
+  font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -27,7 +28,7 @@ main h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 32px;
+  font-size: 3.2rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   z-index: 2;
@@ -40,7 +41,7 @@ main h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Merienda One', cursive;
-  font-size: 70px;
+  font-size: 7rem;
   opacity: 0;
   transition: .3s;
 }
@@ -58,11 +59,12 @@ main h2 {
 }
 
 main h3 {
-  width: 65%;
-  text-align: center;
-  background-color: rgba(0, 0, 0, .5);
-  color: #f5cb5c;
   padding: 10px;
-  border-radius: 10px;
+  width: 65%;
+  font-size: 1.8rem;
+  text-align: center;
   text-transform: uppercase;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, .6);
+  color: #f5cb5c;
 }
