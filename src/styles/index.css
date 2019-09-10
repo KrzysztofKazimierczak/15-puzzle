@@ -8,6 +8,8 @@
 }
 
 body {
-  background-color: #004BA8;
+  background-image: url(../images/128-192.jpg);
+  background-repeat: repeat;
+  /* background-color: #004BA8; */
   color: #F1FAEE
 }
