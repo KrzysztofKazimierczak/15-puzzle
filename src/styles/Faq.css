@@ -4,7 +4,13 @@
   right: 0;
   transform: translate(50%, -50%);
   font-size: 50px;
+  color: #e8eddf;
   cursor: pointer;
+  transition: .3s;
+}
+
+.fa-times-circle:hover {
+  color: #f5cb5c;
 }
 
 .faqContainer {
@@ -14,25 +20,73 @@
   transform: translate(-50%, -50%);
   width: 0;
   height: 0;
-  border-radius: 5%;
-  background-color: green;
-  transition: 0.2s;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, .8);
+  text-align: center;
+  transition: 0.3s;
   z-index: -1;
 }
 
-.faqContainer * {
+.faqContainer .tips,
+.faqContainer .cheats {
   display: none;
 }
 
+.faqContainer p {
+  /* font-size: 26px; */
+  letter-spacing: 1px;
+}
+
+
 .faqOn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   width: 50vw;
   height: 50vh;
+  padding: 20px;
   filter: blur(0px);
   z-index: 3;
 }
 
-.faqOn * {
-  display: block
+.faqOn .tips,
+.faqOn .cheats {
+  display: block;
+}
+
+.tips {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-basis: 35%
+}
+
+.cheats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+.cheats h2 {
+  font-family: 'Merienda One', cursive;
+}
+
+.cheats button {
+  padding: 30px 20px;
+  background-color: #e8eddf;
+  border: 1px solid black;
+  border-radius: 15px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.cheats button:hover {
+  background-color: #f5cb5c;
 }
 
 .blurActive {
