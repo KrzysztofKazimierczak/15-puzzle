@@ -1,5 +1,6 @@
 main h2 {
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .settings {
@@ -38,7 +39,8 @@ main h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 100px;
+  font-family: 'Merienda One', cursive;
+  font-size: 70px;
   opacity: 0;
   transition: .3s;
 }
