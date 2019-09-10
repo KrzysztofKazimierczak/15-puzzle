@@ -29,7 +29,7 @@ class Faq extends Component {
 
 
       </div>
-      <div className={`${this.props.faqActive ? "blurActive" : ""}`}></div>
+      <div className="blurActive"></div>
     </>);
   }
 }
