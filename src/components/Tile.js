@@ -1,10 +1,10 @@
 import React from 'react';
 import "../styles/Tile.css";
 const Tile = (props) => {
+  const size = `${100 / props.size}%`
   const styleSize = {
-    flexBasis: props.size,
-    height: props.size,
-
+    flexBasis: size,
+    height: size,
   }
   const styleBgc = {
     backgroundColor: `${props.index + 1 === props.value ? "#F5CB5C" : "#E8EDDF"}`

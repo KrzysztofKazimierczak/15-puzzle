@@ -5,9 +5,6 @@ import '../styles/Board.css';
 
 class Board extends Component {
 
-
-  tile_size = `${100 / this.props.size}%`
-
   componentWillMount() {
     this.prepareBoard()
 
@@ -42,7 +39,7 @@ class Board extends Component {
             index={index}
             value={this.props.board[index].value}
             move={this.handleClick}
-            size={this.tile_size}>
+            size={this.props.size}>
           </Tile>
         )
       })
