@@ -69,7 +69,9 @@ class Board extends Component {
   }
 
   checkIsMovePossible = (current, target) => {
-    if (Math.abs((current[0] - target[0]) + (current[1] - target[1])) === 1) return true
+    if (Math.sqrt(Math.pow(target[0] - current[0], 2) + Math.pow(target[1] - current[1], 2)) === 1) {
+      return true
+    }
   }
   checkResult = (tiles) => {
     let counter = 0;
