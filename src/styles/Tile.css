@@ -1,8 +1,22 @@
-.TileZero {
-  background-color: black
+.Tile {
+  position: relative;
+  /* background-color: #E8EDDF; */
+  border: 10px solid #004BA8;
+  border-radius: 20%;
+  transition: .4s;
 }
 
-.Tile {
+.Tile p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: #333533
+}
 
-  background-color: red
+.TileZero {
+  border: 10px solid #004BA8;
+  border-radius: 20%;
+  background-color: #1D3557;
 }

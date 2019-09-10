@@ -39,6 +39,7 @@ class Board extends Component {
         return (
           <Tile
             key={index}
+            index={index}
             value={this.props.board[index].value}
             move={this.handleClick}
             size={this.tile_size}>

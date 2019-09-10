@@ -26,8 +26,9 @@ class SetDifficulty extends Component {
             <p>hard</p>
             <span>5x5</span>
           </div>
-
         </section>
+        <h3>The difficulty relates to the number of tiles that you need to arrange on the board</h3>
+
       </>
     );
   }
