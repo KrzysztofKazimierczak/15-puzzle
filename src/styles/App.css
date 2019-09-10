@@ -20,6 +20,10 @@ main {
   flex-grow: 1;
 }
 
+aside {
+  transition: 2s;
+}
+
 footer {
   /* padding-bottom: 10px; */
   text-align: center;

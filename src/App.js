@@ -26,6 +26,7 @@ class App extends Component {
 
   render() {
     let mainContainer;
+    const faq = this.state.faqActive ? <Faq boardSize={this.state.boardSize} changeParentState={this.changeState} board={this.state.board} /> : null;
     const blur = `${this.state.faqActive ? "blur" : ""}`;
     if (this.state.won) {
       mainContainer = <Won changeParentState={this.changeState} steps={this.state.steps} cheater={this.state.cheater} boardSize={this.state.boardSize} />
@@ -44,7 +45,7 @@ class App extends Component {
           {mainContainer}
         </main>
         <aside>
-          <Faq faqActive={this.state.faqActive} boardSize={this.state.boardSize} changeParentState={this.changeState} board={this.state.board} />
+          {faq}
         </aside>
         <footer className={blur}>
           <Footer />

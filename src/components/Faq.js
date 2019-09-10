@@ -19,7 +19,7 @@ class Faq extends Component {
   render() {
     const boardSize = this.props.boardSize ** 2 - 1
     return (<>
-      <div className={this.props.faqActive ? "faqContainer faqOn" : "faqContainer"}>
+      <div className="faqContainer">
         <i className="far fa-times-circle" onClick={() => { this.props.changeParentState("faqActive", false) }}></i>
         <div className="tips"><p>To win the game you need to change the order of the blocks to arrange numbers from 1 to {boardSize}. The last tile should be empty.</p>
           <p>You can change order by clicking the adjacent empty tile.</p></div>
