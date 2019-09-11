@@ -22,9 +22,9 @@ class Faq extends Component {
       <div className="faqContainer">
         <i className="far fa-times-circle" onClick={() => { this.props.changeParentState("faqActive", false) }}></i>
         <div className="tips">
-          <p>To win the game you need to change the order of the blocks to arrange numbers from 1 to {boardSize}.</p>
+          <p>To win the game you need to change the position of the blocks to arrange numbers from 1 to {boardSize}.</p>
           <p>The last tile should be empty.</p>
-          <p>You can change the order by clicking the adjacent empty tile.</p>
+          <p>You can change the position of the tiles by clicking the one which is adjacent to the empty spot.</p>
         </div>
         <div className="cheats">
           <h2>Need help?</h2>
