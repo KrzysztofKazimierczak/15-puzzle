@@ -24,7 +24,7 @@ class Faq extends Component {
         <div className="tips">
           <p>To win the game you need to change the order of the blocks to arrange numbers from 1 to {boardSize}.</p>
           <p>The last tile should be empty.</p>
-          <p>You can change order by clicking the adjacent empty tile.</p>
+          <p>You can change the order by clicking the adjacent empty tile.</p>
         </div>
         <div className="cheats">
           <h2>Need help?</h2>
