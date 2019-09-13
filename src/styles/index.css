@@ -2,11 +2,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto Condensed', sans-serif;
+}
+
+div,
+button,
+p,
+span,
+i {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 html {
   font-size: 10px;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 body {
