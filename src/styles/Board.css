@@ -1,10 +1,12 @@
 .board {
   display: flex;
   position: relative;
-  width: 30vw;
-  height: 30vw;
   flex-wrap: wrap;
   align-content: flex-start;
+  width: 576px;
+  height: 576px;
+  min-width: 245px;
+  min-height: 245px;
 }
 
 
@@ -23,9 +25,41 @@
 }
 
 
-@media(orientation:portrait) {
+@media(max-width:700px) {
   .board {
-    width: 45vh;
-    height: 45vh;
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+
+@media(max-width:500px) {
+  .board {
+    font-size: 8px
+  }
+}
+
+@media(max-width:380px) {
+  .board {
+    font-size: 7px
+  }
+}
+
+@media(max-height:800px) and (orientation:landscape) {
+  .board {
+    width: 65vh;
+    height: 65vh;
+  }
+}
+
+@media(max-height:500px) and (orientation:landscape) {
+  .board {
+    font-size: 8px
+  }
+}
+
+@media(max-height:360px) and (orientation:landscape) {
+  .board {
+    font-size: 7px
   }
 }
