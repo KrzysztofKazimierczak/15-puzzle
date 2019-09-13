@@ -8,7 +8,7 @@ self.__precacheManifest = [
     "url": "/15-puzzle/static/js/runtime~main.8815c511.js"
   },
   {
-    "revision": "61d31e10a8c4100ca424",
+    "revision": "bcf2d88f12933b96ae17",
     "url": "/15-puzzle/static/js/main.995ecc49.chunk.js"
   },
   {
@@ -16,11 +16,11 @@ self.__precacheManifest = [
     "url": "/15-puzzle/static/js/2.163c59ff.chunk.js"
   },
   {
-    "revision": "61d31e10a8c4100ca424",
-    "url": "/15-puzzle/static/css/main.aafcb3bd.chunk.css"
+    "revision": "bcf2d88f12933b96ae17",
+    "url": "/15-puzzle/static/css/main.b97a235f.chunk.css"
   },
   {
-    "revision": "c8e7a83439e6fbbd0ad2d6ba9b65daa5",
+    "revision": "8e3e4ae487d2471837416768031cf93b",
     "url": "/15-puzzle/index.html"
   }
 ];
