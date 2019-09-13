@@ -72,6 +72,7 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: .3s;
+  outline: 0;
 }
 
 .cheats button:hover {
@@ -113,16 +114,3 @@
     height: 15%;
   }
 }
-
-/* @media(max-height:500px) and (orientation: landscape) {
-  .faqContainer {
-    font-size: 12px;
-  }
-} */
-
-/* @media(orientation:landscape) {
-  .faqContainer {
-    min-width: 453px;
-    min-height: 272px;
-  }
-} */
