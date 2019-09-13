@@ -6,10 +6,6 @@
   cursor: pointer;
 }
 
-.Tile p::selection {
-  background-color: transparent
-}
-
 .Tile p {
   position: absolute;
   top: 50%;
@@ -19,7 +15,6 @@
   font-size: 5em;
   ;
   color: #1D3557;
-  user-select: none;
 }
 
 .TileZero {
