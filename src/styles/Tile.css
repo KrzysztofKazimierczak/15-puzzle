@@ -19,6 +19,7 @@
   font-size: 5em;
   ;
   color: #1D3557;
+  user-select: none;
 }
 
 .TileZero {
