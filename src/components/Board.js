@@ -69,6 +69,7 @@ class Board extends Component {
   }
 
   checkIsMovePossible = (current, target) => {
+    // Math.sqrt and 2x Math.pow makes always positive numbers and prevents illegal moves
     if (Math.sqrt(Math.pow(target[0] - current[0], 2) + Math.pow(target[1] - current[1], 2)) === 1) {
       return true
     }
