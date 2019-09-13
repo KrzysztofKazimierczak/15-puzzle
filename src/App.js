@@ -18,20 +18,21 @@ class App extends Component {
     board: []
   }
 
-  changeState = (propStateName, arg) => {
+  changeState = (propStateName, state) => {
     this.setState(prevState => ({
-      [propStateName]: arg
+      [propStateName]: state
     }))
   }
 
   render() {
+    const { faqActive, boardSize, board, steps, cheater } = this.state
     let mainContainer;
-    const faq = this.state.faqActive ? <Faq boardSize={this.state.boardSize} changeParentState={this.changeState} board={this.state.board} /> : null;
-    const blur = `${this.state.faqActive ? "blur" : ""}`;
+    const faq = faqActive ? <Faq boardSize={boardSize} changeParentState={this.changeState} board={board} /> : null;
+    const blur = `${faqActive ? "blur" : ""}`;
     if (this.state.won) {
-      mainContainer = <Won changeParentState={this.changeState} steps={this.state.steps} cheater={this.state.cheater} boardSize={this.state.boardSize} />
+      mainContainer = <Won changeParentState={this.changeState} steps={steps} cheater={cheater} boardSize={boardSize} />
     } else {
-      this.state.gameStarted ? mainContainer = <Board changeParentState={this.changeState} size={this.state.boardSize} steps={this.state.steps} board={this.state.board} /> : mainContainer = <SetDificulty changeParentState={this.changeState} />;
+      this.state.gameStarted ? mainContainer = <Board changeParentState={this.changeState} size={boardSize} steps={steps} board={board} /> : mainContainer = <SetDificulty changeParentState={this.changeState} />;
     }
 
 
