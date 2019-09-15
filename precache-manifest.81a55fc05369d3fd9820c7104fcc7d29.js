@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/15-puzzle/static/js/runtime~main.8815c511.js"
   },
   {
-    "revision": "b42aef6630d3a6ba097b",
-    "url": "/15-puzzle/static/js/main.995ecc49.chunk.js"
+    "revision": "52f054c9428e77ef6423",
+    "url": "/15-puzzle/static/js/main.cdf34ac3.chunk.js"
   },
   {
     "revision": "2be1e72a8436f2ddad1b",
     "url": "/15-puzzle/static/js/2.163c59ff.chunk.js"
   },
   {
-    "revision": "b42aef6630d3a6ba097b",
+    "revision": "52f054c9428e77ef6423",
     "url": "/15-puzzle/static/css/main.230861db.chunk.css"
   },
   {
-    "revision": "24b5d4eb6a8c38d7bf2f1c89ae3d72f0",
+    "revision": "8774362cf9d225381d649dc202c8ecb2",
     "url": "/15-puzzle/index.html"
   }
 ];
