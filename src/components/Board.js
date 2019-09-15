@@ -5,14 +5,13 @@ import '../styles/Board.css';
 
 class Board extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.prepareBoard()
-
   }
   prepareBoard() {
     let board = [];
 
-    for (let i = 0; i < this.props.size ** 2; i++) {
+    for (let i = 1; i < this.props.size ** 2; i++) {
       board.push(new TileClass(i));
     }
     board = this.shuffleBoard(board);
@@ -20,16 +19,66 @@ class Board extends Component {
   }
 
   shuffleBoard = (board) => {
-    board.sort(() => .5 - Math.random());
-    let index = 0
-    for (let y = 0; y < this.props.size; y++) {
-      for (let x = 0; x < this.props.size; x++) {
-        board[index].coordinates = [x, y];
+    const shuffledBoard = board.sort(() => .5 - Math.random());
+
+    if (!this.checkIsSolvable(shuffledBoard)) {
+      this.shuffleBoard(board)
+    } else {
+      //add empty tile
+      shuffledBoard.push(new TileClass(0))
+      this.addCoordinates(shuffledBoard)
+    }
+    return shuffledBoard;
+
+  }
+
+  addCoordinates = (shuffledBoard) => {
+    let index = 0;
+
+    for (let y = 0; y <= this.props.size - 1; y++) {
+      for (let x = 0; x <= this.props.size - 1; x++) {
+        shuffledBoard[index].coordinates = [x, y];
         index++
       }
     }
-    return board;
   }
+
+  checkIsSolvable = (shuffledboard) => {
+    const verification = [];
+    let inversions = 0;
+
+    for (let i = 0; i < shuffledboard.length; i++) {
+      verification.push(shuffledboard[i].value)
+    }
+    inversions = this.countInversions(verification)
+    console.log(inversions);
+
+    if (this.props.size % 2 !== 0) {
+      // if board size is odd and inversions number is even
+      if (inversions % 2 === 0) return true
+    } else if (this.props.size % 2 === 0) {
+      // if board size is even,
+      if (inversions % 2 === 0) {
+        // iversions number is even
+        return true
+      }
+    }
+  }
+
+  countInversions = (verification) => {
+    let counter = 0;
+    for (let i = 0; i < verification.length; i++) {
+      if (verification[i] !== 0) {
+        for (let j = i + 1; j <= verification.length; j++) {
+          if (verification[i] > verification[j] && verification[j] !== 0) {
+            counter++;
+          }
+        }
+      }
+    }
+    return counter
+  }
+
   createTiles(board) {
     return (
       board.map((tile, index) => {
