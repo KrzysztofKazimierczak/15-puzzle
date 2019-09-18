@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import './Won.css'
 
 class Won extends Component {
-  handleClick = () => {
-    this.props.changeParentState("won", false)
-    this.props.changeParentState("gameStarted", false)
-    this.props.changeParentState("boardSize", null)
-    this.props.changeParentState("cheater", false)
-    this.props.changeParentState("steps", 0)
-  }
+
   render() {
     return (
       <div className="won">
@@ -18,7 +12,7 @@ class Won extends Component {
         </div>
         <div className="again">
           {this.props.cheater ? <p>Now I encourage you to try again, this time without cheating.</p> : <p>{this.props.boardSize <= 4 ? "Now I encourage You to try again on higher level." : "You beat the highest level."}</p>}
-          <button onClick={this.handleClick}>try again</button>
+          <button onClick={this.props.tryAgain}>try again</button>
         </div>
       </div>
     );
