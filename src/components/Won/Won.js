@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/Won.css'
+import './Won.css'
 
 class Won extends Component {
   handleClick = () => {

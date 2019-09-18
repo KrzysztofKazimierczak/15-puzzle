@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/SetDifficulty.css'
+import './SetDifficulty.css'
 
 
 class SetDifficulty extends Component {

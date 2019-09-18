@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/Faq.css'
+import './Faq.css'
 
 class Faq extends Component {
 

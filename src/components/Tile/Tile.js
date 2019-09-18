@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/Tile.css";
+import "./Tile.css";
 const Tile = (props) => {
   const size = `${100 / props.size}%`
   const styleSize = {

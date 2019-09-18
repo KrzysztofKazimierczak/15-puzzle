@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './styles/App.css';
-import Header from './components/Header.js';
-import SetDificulty from './components/SetDifficulty.js';
-import Board from './components/Board.js';
-import Footer from './components/Footer.js';
-import Won from './components/Won.js';
-import Faq from "./components/Faq.js";
+import './App.css';
+import Header from './components/Header/Header.js';
+import SetDificulty from './components/SetDifficulty/SetDifficulty.js';
+import Board from './components/Board/Board.js';
+import Footer from './components/Footer/Footer.js';
+import Won from './components/Won/Won.js';
+import Faq from "./components/Faq/Faq.js";
 
 class App extends Component {
   state = {
