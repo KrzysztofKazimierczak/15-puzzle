@@ -23,14 +23,24 @@ class App extends Component {
       [propStateName]: state
     }))
   }
+  tryAgain = () => {
+    this.setState({
+      gameStarted: false,
+      won: false,
+      boardSize: null,
+      steps: 0,
+      cheater: false,
+      board: []
+    })
+  }
 
   render() {
-    const { faqActive, boardSize, board, steps, cheater } = this.state
+    const { faqActive, boardSize, board, steps, cheater } = this.state;
     let mainContainer;
     const faq = faqActive ? <Faq boardSize={boardSize} changeParentState={this.changeState} board={board} /> : null;
     const blur = `${faqActive ? "blur" : ""}`;
     if (this.state.won) {
-      mainContainer = <Won changeParentState={this.changeState} steps={steps} cheater={cheater} boardSize={boardSize} />
+      mainContainer = <Won tryAgain={this.tryAgain} steps={steps} cheater={cheater} boardSize={boardSize} />
     } else {
       this.state.gameStarted ? mainContainer = <Board changeParentState={this.changeState} size={boardSize} steps={steps} board={board} /> : mainContainer = <SetDificulty changeParentState={this.changeState} />;
     }
