@@ -53,15 +53,12 @@ class Board extends Component {
     inversions = this.countInversions(verification)
     console.log(inversions);
 
-    if (this.props.size % 2 !== 0) {
+    if (this.props.size % 2 !== 0 && inversions % 2 === 0) {
       // if board size is odd and inversions number is even
-      if (inversions % 2 === 0) return true
-    } else if (this.props.size % 2 === 0) {
-      // if board size is even,
-      if (inversions % 2 === 0) {
-        // iversions number is even
-        return true
-      }
+      return true
+    } else if (this.props.size % 2 === 0 && inversions % 2 === 0) {
+      // if board size is even, and iversions number is even
+      return true
     }
   }
 
