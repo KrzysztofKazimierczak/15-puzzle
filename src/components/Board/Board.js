@@ -51,15 +51,9 @@ class Board extends Component {
       verification.push(shuffledboard[i].value)
     }
     inversions = this.countInversions(verification)
-    console.log(inversions);
 
-    if (this.props.size % 2 !== 0 && inversions % 2 === 0) {
-      // if board size is odd and inversions number is even
-      return true
-    } else if (this.props.size % 2 === 0 && inversions % 2 === 0) {
-      // if board size is even, and iversions number is even
-      return true
-    }
+    // solvable only when inversions number is even
+    if (inversions % 2 === 0) return true;
   }
 
   countInversions = (verification) => {
